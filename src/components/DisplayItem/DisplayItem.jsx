@@ -1,5 +1,9 @@
 import axios from 'axios';
 import './DisplayItem.css';
+import * as React from 'react';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+
 
 function DisplayItem(props){
 
@@ -30,7 +34,7 @@ function DisplayItem(props){
             return <>Item Purchased</>
         }
         else if(props.item.purchased === false){
-            return <button onClick={purchaseItem}>Buy</button>
+            return <Button variant="contained" onClick={purchaseItem}>Buy</Button>
         }
     }
 
@@ -40,7 +44,7 @@ function DisplayItem(props){
                 <p>Quantity Needed: {props.item.quantity}</p>
                 <p>Unit: {props.item.unit}</p>
                 <p>{purchased(props.item.purchased)}</p>
-                <button onClick={removeItem}>Remove</button>
+                <Button variant="contained" onClick={removeItem}>Remove</Button>
             </div>
 
         );

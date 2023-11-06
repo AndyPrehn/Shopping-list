@@ -1,6 +1,9 @@
 import DisplayItem from '../DisplayItem/DisplayItem';
 import axios from 'axios';
 import './ShoppingList.css';
+import * as React from 'react';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 
 function ShoppingList (props) {
 
@@ -38,8 +41,8 @@ function ShoppingList (props) {
         <div id="shopping-list">
             <hr></hr>
             <h3>Shopping List:</h3>
-            <button onClick={resetList}>Reuse List</button>
-            <button onClick={clearList}>Delete All</button>
+            <Button variant="contained" onClick={resetList}>Reuse List</Button>
+            <Button variant="outlined" onClick={clearList}>Delete All</Button>
             <hr></hr>
             <div id="shopping-list-body">
                 {props.list.map((item) => (<DisplayItem getShoppingList={props.getShoppingList} key={item.id} item={item}/>))}
